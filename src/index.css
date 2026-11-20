@@ -1,0 +1,72 @@
+@import "@fontsource/outfit/500.css";
+@import "@fontsource/outfit/600.css";
+@import "@fontsource/outfit/700.css";
+@import "@fontsource/outfit/800.css";
+@import "@fontsource/plus-jakarta-sans/400.css";
+@import "@fontsource/plus-jakarta-sans/500.css";
+@import "@fontsource/plus-jakarta-sans/600.css";
+@import "@fontsource/plus-jakarta-sans/700.css";
+@import "@fontsource/jetbrains-mono/400.css";
+@import "@fontsource/jetbrains-mono/500.css";
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Outfit", system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-obsidian: #060608;
+  --color-surface-1: #101014;
+  --color-surface-2: #18181f;
+  --color-surface-3: #22222c;
+  --color-ivory: #f5f4f0;
+  --color-muted: #9a9992;
+  --color-gold: #d4af37;
+  --color-gold-bright: #ebd074;
+  --color-gold-deep: #9c7a1c;
+}
+
+@layer base {
+  html {
+    background-color: #060608;
+    color: #f5f4f0;
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    overflow-x: hidden;
+    background-color: #060608;
+  }
+
+  /* Custom subtle dark scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #060608;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #22222c;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #d4af37;
+  }
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #f5f4f0 10%, #ebd074 55%, #b89022 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-hairline {
+  border-color: rgba(212, 175, 55, 0.22);
+}
