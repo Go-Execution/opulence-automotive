@@ -6,24 +6,24 @@ import { Tilt3DFrame } from './Tilt3DFrame'
 const HERO_HOTSPOTS = [
   {
     id: 'splitter',
-    label: 'Forged Carbon Splitter',
-    detail: 'Autoclave composite chin aero & downforce tray',
-    x: '20%',
-    y: '68%',
+    label: 'Front Aero Splitter',
+    detail: 'Sculpted low-profile chin splitter and front dive planes',
+    x: '16%',
+    y: '71%',
   },
   {
     id: 'wheel',
-    label: '21" OAP-01 Monoblock',
-    detail: 'Champagne gold outer lip + 6-piston ceramic brakes',
-    x: '54%',
-    y: '66%',
+    label: '5-Spoke Black Wheel',
+    detail: 'Gloss black 5-spoke alloy paired with slotted performance rotors',
+    x: '43%',
+    y: '67%',
   },
   {
-    id: 'trim',
-    label: 'Champagne Gold DLO',
-    detail: 'Signature brushed gold upper daylight surround',
-    x: '70%',
-    y: '34%',
+    id: 'cockpit',
+    label: 'Open-Air Cockpit',
+    detail: 'Swept dark windscreen with sculpted driver cockpit and moto controls',
+    x: '62%',
+    y: '38%',
   },
 ] as const
 
@@ -37,8 +37,8 @@ export function HeroStage() {
     offset: ['start start', 'end start'],
   })
 
-  const stageY = useTransform(scrollYProgress, [0, 1], [0, 32])
-  const stageScale = useTransform(scrollYProgress, [0, 1], [1, 1.04])
+  const stageY = useTransform(scrollYProgress, [0, 1], [0, 28])
+  const stageScale = useTransform(scrollYProgress, [0, 1], [1, 1.03])
 
   const selectedPin =
     HERO_HOTSPOTS.find((h) => h.id === activeHotspot) ?? HERO_HOTSPOTS[1]
@@ -75,7 +75,7 @@ export function HeroStage() {
         className="pointer-events-none absolute top-1/4 right-[6%] h-[440px] w-[540px] rounded-full bg-[#D4AF37]/[0.08] blur-[150px]"
       />
 
-      <div className="relative z-10 mx-auto my-auto grid w-full max-w-7xl grid-cols-1 items-center gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:gap-6 lg:px-8">
+      <div className="relative z-10 mx-auto my-auto grid w-full max-w-7xl grid-cols-1 items-center gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:gap-8 lg:px-8">
         {/* Strictly 4 text elements in hero copy stack */}
         <motion.div
           initial={reduceMotion ? false : { opacity: 0, y: 18 }}
@@ -93,7 +93,7 @@ export function HeroStage() {
           </h1>
 
           <p className="mt-6 max-w-[42ch] text-base leading-relaxed text-[#A8A7A0] sm:text-lg">
-            One bespoke widebody grand tourer for sale, surrounded by matched custom auto parts and limited capsule apparel.
+            One bespoke open-cockpit custom automobile for sale, surrounded by matched custom auto parts and limited capsule apparel.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -117,35 +117,32 @@ export function HeroStage() {
           </div>
         </motion.div>
 
-        {/* Seamless 3D Perspective Studio Vehicle Stage (zero box edges) */}
+        {/* Architectural Studio Frame Showcase for Opulence Flagship Vehicle */}
         <motion.div
           initial={reduceMotion ? false : { opacity: 0, scale: 0.97 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
           className="lg:col-span-7"
         >
-          <Tilt3DFrame intensity={4} glare={false}>
+          <Tilt3DFrame intensity={4}>
             <motion.div
               style={reduceMotion ? undefined : { y: stageY, scale: stageScale }}
-              className="relative"
+              className="relative overflow-hidden rounded-sm border border-[#D4AF37]/30 bg-[#0B0B0F] shadow-2xl"
             >
-              <div
-                className="relative aspect-[16/10] w-full overflow-hidden"
-                style={{
-                  maskImage:
-                    'radial-gradient(ellipse 78% 72% at 52% 50%, black 52%, transparent 88%)',
-                  WebkitMaskImage:
-                    'radial-gradient(ellipse 78% 72% at 52% 50%, black 52%, transparent 88%)',
-                }}
-              >
+              <div className="relative aspect-[2/1] w-full overflow-hidden">
                 <img
-                  src="/images/hero-flagship.jpg"
-                  alt="Opulence OP-01 Black Sovereign custom widebody matte black automobile with brushed champagne gold wheels"
-                  className="h-full w-full object-cover object-center"
+                  src="/images/hero-roadster.jpg"
+                  alt="Opulence Automotive Productions custom jet-black open-cockpit flagship vehicle with 5-spoke gloss black wheels"
+                  className="h-full w-full object-cover object-center contrast-[1.06] brightness-[0.96]"
+                />
+                {/* Subtle studio cyclorama edge vignette tying light grey studio backdrop into obsidian frame */}
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_78%_at_50%_52%,transparent_52%,rgba(5,5,7,0.75)_100%)]"
                 />
               </div>
 
-              {/* Interactive architectural hotspot pins over studio render */}
+              {/* Interactive architectural hotspot pins */}
               {HERO_HOTSPOTS.map((spot) => {
                 const isSelected = spot.id === activeHotspot
                 return (
@@ -157,7 +154,7 @@ export function HeroStage() {
                     style={{ left: spot.x, top: spot.y }}
                     aria-label={`Inspect ${spot.label}`}
                     data-agent={`hero-hotspot-${spot.id}`}
-                    className={`group absolute -translate-x-1/2 -translate-y-1/2 rounded-full p-1.5 transition-transform hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] ${
+                    className={`group absolute z-30 -translate-x-1/2 -translate-y-1/2 rounded-full p-1.5 transition-transform hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] ${
                       isSelected ? 'scale-110' : ''
                     }`}
                   >
@@ -165,7 +162,7 @@ export function HeroStage() {
                       className={`flex h-6 w-6 items-center justify-center rounded-full border backdrop-blur-md transition-colors ${
                         isSelected
                           ? 'border-[#D4AF37] bg-[#D4AF37] text-[#050507]'
-                          : 'border-[#D4AF37]/60 bg-[#050507]/80 text-[#D4AF37] hover:bg-[#D4AF37]/20'
+                          : 'border-[#D4AF37]/70 bg-[#050507]/85 text-[#D4AF37] hover:bg-[#D4AF37]/25'
                       }`}
                     >
                       <Crosshair size={12} weight="bold" />
