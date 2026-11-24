@@ -111,6 +111,11 @@ export function CheckoutDrawer({
             <div className="flex-1 space-y-6 overflow-y-auto px-6 py-6">
               {receiptCode ? (
                 <div className="rounded-sm border border-[#D4AF37]/40 bg-[#14141A] p-6">
+                  <img
+                    src="/images/opulence-logo.png"
+                    alt="Opulence Automotive Productions LLC"
+                    className="mb-5 h-16 w-auto object-contain"
+                  />
                   <div className="flex items-center gap-3">
                     <CheckCircle size={28} weight="fill" className="text-[#D4AF37]" />
                     <div>

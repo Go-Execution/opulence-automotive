@@ -1,6 +1,5 @@
 import { List, ShoppingBag, X } from '@phosphor-icons/react'
 import { useState } from 'react'
-import { OpulenceCrest } from './OpulenceCrest'
 
 interface NavbarProps {
   cartCount: number
@@ -19,25 +18,18 @@ export function Navbar({ cartCount, onOpenCart }: NavbarProps) {
   const [mobileOpen, setMobileOpen] = useState(false)
 
   return (
-    <header className="fixed inset-x-0 top-0 z-40 border-b border-white/[0.08] bg-[#050507]/85 backdrop-blur-xl">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+    <header className="fixed inset-x-0 top-0 z-40 border-b border-white/[0.08] bg-[#050507]/90 backdrop-blur-xl">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <a
           href="#top"
           data-agent="nav-brand-home"
-          className="group flex items-center gap-3 py-1 pr-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] focus-visible:ring-offset-2 focus-visible:ring-offset-[#050507]"
+          className="group flex items-center py-1 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] focus-visible:ring-offset-2 focus-visible:ring-offset-[#050507]"
         >
-          <OpulenceCrest
-            size={30}
-            className="transition-transform duration-300 group-hover:scale-105"
+          <img
+            src="/images/opulence-logo.png"
+            alt="Opulence Automotive Productions LLC - The Level Above Luxury"
+            className="h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.03] sm:h-16"
           />
-          <div className="flex flex-col">
-            <span className="font-display text-sm font-bold tracking-[0.2em] text-[#F5F4F0]">
-              OPULENCE
-            </span>
-            <span className="font-mono text-[9px] tracking-[0.24em] text-[#D4AF37]">
-              AUTOMOTIVE PRODUCTIONS
-            </span>
-          </div>
         </a>
 
         <nav

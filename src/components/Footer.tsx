@@ -1,5 +1,4 @@
 import { BRAND_CONTACT } from '../data/catalog'
-import { OpulenceCrest } from './OpulenceCrest'
 
 export function Footer() {
   return (
@@ -7,19 +6,15 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-12">
           <div className="md:col-span-5">
-            <div className="flex items-center gap-3">
-              <OpulenceCrest size={34} />
-              <div>
-                <p className="font-display text-base font-bold tracking-[0.16em] text-[#F5F4F0]">
-                  OPULENCE
-                </p>
-                <p className="font-mono text-[10px] tracking-[0.2em] text-[#D4AF37]">
-                  AUTOMOTIVE PRODUCTIONS LLC.
-                </p>
-              </div>
-            </div>
+            <a href="#top" className="inline-block">
+              <img
+                src="/images/opulence-logo.png"
+                alt="Opulence Automotive Productions LLC - The Level Above Luxury"
+                className="h-32 w-auto object-contain"
+              />
+            </a>
 
-            <p className="mt-4 max-w-[38ch] text-sm leading-relaxed text-[#9A9992]">
+            <p className="mt-5 max-w-[38ch] text-sm leading-relaxed text-[#9A9992]">
               Bespoke custom automobiles, precision forged auto parts, and matched luxury capsule apparel built in black and gold.
             </p>
           </div>
