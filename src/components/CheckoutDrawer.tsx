@@ -114,7 +114,7 @@ export function CheckoutDrawer({
                   <img
                     src="/images/opulence-logo.png"
                     alt="Opulence Automotive Productions LLC"
-                    className="mb-5 h-16 w-auto object-contain"
+                    className="mb-5 h-[77px] w-auto object-contain"
                   />
                   <div className="flex items-center gap-3">
                     <CheckCircle size={28} weight="fill" className="text-[#D4AF37]" />

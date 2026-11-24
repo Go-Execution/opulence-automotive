@@ -19,7 +19,7 @@ export function Navbar({ cartCount, onOpenCart }: NavbarProps) {
 
   return (
     <header className="fixed inset-x-0 top-0 z-40 border-b border-white/[0.08] bg-[#050507]/90 backdrop-blur-xl">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-[88px] max-w-7xl items-center justify-between px-4 sm:h-24 sm:px-6 lg:px-8">
         <a
           href="#top"
           data-agent="nav-brand-home"
@@ -28,7 +28,7 @@ export function Navbar({ cartCount, onOpenCart }: NavbarProps) {
           <img
             src="/images/opulence-logo.png"
             alt="Opulence Automotive Productions LLC - The Level Above Luxury"
-            className="h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.03] sm:h-16"
+            className="h-[67px] w-auto object-contain transition-transform duration-300 group-hover:scale-[1.03] sm:h-[77px]"
           />
         </a>
 

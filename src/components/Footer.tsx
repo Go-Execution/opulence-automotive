@@ -10,7 +10,7 @@ export function Footer() {
               <img
                 src="/images/opulence-logo.png"
                 alt="Opulence Automotive Productions LLC - The Level Above Luxury"
-                className="h-32 w-auto object-contain"
+                className="h-[154px] w-auto object-contain"
               />
             </a>
 
